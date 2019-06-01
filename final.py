@@ -3,24 +3,21 @@ import re
 from urllib import urlopen
 stats = urlopen('http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=1151FF2B5E80B68F9951145B6297FD2E&steamid=76561198230401688').read()
 
-test = str(stats)
-array = test.split('"');
-index = array.index("total_kills")
-valueIndex = index+3
-total = array[valueIndex]
-killtotal = str(total)
-totalKills = str(re.findall('\d+', killtotal)[0])
-print("Total Kills: ",  totalKills)
-killInt = float(totalKills)
 
-array2 = test.split('"');
-index = array2.index("total_deaths")
-valueIndex2 = index+3
-total2 = array2[valueIndex2]
-deathtotal = str(total2)
-totalDeaths = str(re.findall('\d+', deathtotal)[0])
-deathInt = float(totalDeaths)
+def getStat(statName):
+    test = str(stats)
+    array = test.split('"');
+    index = array.index(statName)
+    valueIndex = index + 3
+    total = array[valueIndex]
+    ktotal = str(total)
+    totalC = str(re.findall('\d+', ktotal)[0])
+    kI = float(totalC)
+    return kI
 
-print("Total Deaths: ",  totalDeaths)
+kills = getStat("total_kills")
+deaths = getStat("total_deaths")
 
-print("K/D Ratio: ", killInt/deathInt)
+print("Total Kills: ", int(kills))
+print("Total Deaths: ", int(deaths))
+print("K/D Ratio: ", float(kills/deaths))
