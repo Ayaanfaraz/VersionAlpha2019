@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>NAME</title>
+   <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700|Righteous&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+   <link rel="stylesheet" href="main2.css">
+   <meta charset="utf-8">
+</head>
+<body>
+  <div id="page"> 
+  <div id="leftSide">  
+    <a href="#"><img src="http://cdn.wccftech.com/wp-content/uploads/2015/09/CSGOLOGO.jpg" alt="" height=75 width=75>
+         </a> 
+    <a href="#"><img src="https://www.esportsbets.com/wp-content/uploads/2018/01/lol_client_logo.png" alt="" height=75 width=75>
+         </a>
+    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Team_Fortress_2_style_logo.svg/1200px-Team_Fortress_2_style_logo.svg.png" alt="" height=75 width=75>
+         </a> </div> 
+  <div id="rightSide">
+    <table style="width:100%">
+      <tr>
+        <th>Username</th>
+        <th>Distance (mi)</th> 
+        <th>Skill Index</th>
+    </tr>
+    <tr>
+      <td>Tendousouji_ (You)</td>
+      <td>0</td> 
+      <td>34</td>
+    </tr>
+    <tr>
+      <td>Abadkhan23</td>
+      <td>13</td> 
+      <td>42</td>
+    </tr>
+    <tr>
+      <td>Shabboush</td>
+      <td>7</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <td>Bintay</td>
+      <td>22</td>
+      <td>41</td>
+  </table>
+  <div class="button" onclick="timer()">Start Timer</div>
+  <div class="container">
+    <p id="timer">
+        <span id="timer-days"></span>
+        <span id="timer-hours"></span>
+        <span id="timer-mins"></span>
+        <span id="timer-secs"></span>
+    </p>  
+</div>
+<script>
+  function timer() {
+
+  var endDate = new Date("Jun 3, 2019 23:00:00")
+
+  var timer = setInterval(function() {
+    let now = new Date()
+    let t = endDate - now;
+    
+    if (t >= 0) {
+    
+        let days = Math.floor(t / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+        let secs = Math.floor((t % (1000 * 60)) / 1000);
+    
+        document.getElementById("timer-days").innerHTML = days +
+        "<span class='label'>DAY(S)</span>";
+    
+        document.getElementById("timer-hours").innerHTML = ("0"+hours).slice(-2) +
+        "<span class='label'>HR(S)</span>";
+    
+        document.getElementById("timer-mins").innerHTML = ("0"+mins).slice(-2) +
+        "<span class='label'>MIN(S)</span>";
+    
+        document.getElementById("timer-secs").innerHTML = ("0"+secs).slice(-2) +
+        "<span class='label'>SEC(S)</span>";
+    
+    } else {
+
+        document.getElementById("timer").innerHTML = "The countdown is over!";
+    
+    }
+    
+}, 1000);
+}
+</script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+html, body {
+   background: #465775;
+   margin: 0;
+}
+
+h3, h4, p, span, form, input, button, a, div {
+   font-family: 'Muli', serif;
+   color: #fff;
+}
+
+h1, h2 {
+   font-family: 'Muli', serif;
+   color: #fff;
+}
+
+h1 {
+   font-size: 50px;
+   margin-bottom: 0;
+}
+
+h3 {
+   font-size: 30px;
+   font-weight: 400;
+   margin-top: 0;
+}
+
+.wrap {
+   width: 60%;
+   margin: 0 auto;
+}
+
+p.button {
+   display: block;
+   margin: 0 auto;
+   text-align: center;
+   background: rgb(23,25,32);
+   border: 1px rgb(23,25,32) solid;
+   width: 200px;
+   padding: 10px;
+   border-radius: 6px;
+   font-family: Arial;
+   cursor: pointer;
+   top: calc(50vh - 10px);
+   transition: border 0.3s;
+   position: relative;
+   z-index: 1000;
+}
+
+p.button:hover {
+   border: 1px #fff solid;
+}
+
+#particles-js{
+  width: 100%;
+  height: 100vh;
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: -1000;
+  position: absolute;
+}
+
+.relative {
+   position: relative;
+}
+
+.game {
+   display: grid;
+   grid-template-columns: 120px 1fr;
+   background: rgb(23,25,32);
+   border-radius: 12px;
+   padding: 20px;
+   box-shadow: 0 4px 8px #0008;
+   border: 4px rgb(23,25,32) solid;
+   cursor: pointer;
+   margin-bottom: 20px;
+}
+
+.game.selected {
+   background: #48A9A6;
+}
+
+.game img{
+   border-radius: 50%;
+}
+
+.game .title {
+   font-weight: 600;
+   font-size: 30px;
+   margin-top: 0;
+   margin-bottom: 0;
+}
+
+.game p:not(.title) {
+   font-weight: 300;
+   margin-top: 10px;
+}
+
+.done-button {
+   position: fixed;
+   right: 100px;
+   bottom: 100px;
+   background: rgb(23,25,32);
+   border-radius: 12px;
+   padding: 20px 40px;
+   box-shadow: 0 2px 4px #0008;
+   cursor: pointer;
+   transition: background 0.3s;
+}
+
+.done-button:hover {
+   background: rgb(23,25,32, 0.5)
+}

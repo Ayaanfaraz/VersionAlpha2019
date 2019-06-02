@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Project Titan</title>
+   <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700|Righteous&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+   <link rel="stylesheet" href="main2.css">
+   <meta charset="utf-8">
+</head>
+<body>
+  <div id="page"> 
+    <div id="particles-js"></div>
+  <div id="leftSide">  
+    <a href="csgoStats.html"><img src="http://cdn.wccftech.com/wp-content/uploads/2015/09/CSGOLOGO.jpg" alt="" height=75 width=75>
+         </a> 
+    <a href="#"><img src="https://www.esportsbets.com/wp-content/uploads/2018/01/lol_client_logo.png" alt="" height=75 width=75>
+         </a>
+    <a href="TF2Stats.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Team_Fortress_2_style_logo.svg/1200px-Team_Fortress_2_style_logo.svg.png" alt="" height=75 width=75>
+         </a> 
+  <div class = "exit-button" onclick="window.close()">Exit</div> </div>
+  <div id="rightSide">
+    <table style="width:100%">
+      <tr>
+        <th>Username</th>
+        <th>Distance (mi)</th> 
+        <th>Skill Index</th>
+    </tr>
+    <tr>
+      <td>Tendousouji_ (You)</td>
+      <td>0</td> 
+      <td>34</td>
+    </tr>
+    <tr>
+      <td>Abadkhan23</td>
+      <td>13</td> 
+      <td>42</td>
+    </tr>
+    <tr>
+      <td>Shabboush</td>
+      <td>7</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <td>Bintay</td>
+      <td>22</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <td>Ion437</td>
+      <td>40</td>
+      <td>23</td>
+    </tr><tr>
+      <td>Mathira</td>
+      <td>10</td>
+      <td>54</td>
+    </tr>
+  </table>
+  <div class="compT">Competition Type</div>
+  <select name="user" class="userP">
+    <option value="Most Kills">Most Kills</option>
+    <option value="Highest KDA">Highest KDA</option>
+    <option value="Highest CS per minute">Highest CS per minute</option>
+  </select>
+  <div class="player">Player</div>
+  <select name="user" class="userP">
+    <option value="shabboush">shabboush</option>
+    <option value="Abadkhan23">Abadkhan23</option>
+    <option value="Bintay">Bintay</option>
+  </select>
+  <div class="button" onclick="timer()">Start Timer</div>
+  <div class="container">
+    <p id="timer">
+        <span id="timer-days"></span>
+        <span id="timer-hours"></span>
+        <span id="timer-mins"></span>
+        <span id="timer-secs"></span>
+    </p>  
+</div>
+<div class="gStats" type="button" onclick="APIget()">Get Stats</div>
+<div class="rbutton" type="button" onclick='window.location = "rewards.html"'>Rewards</div>
+<script   src="https://code.jquery.com/jquery-3.4.1.js"   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   crossorigin="anonymous"></script>
+<script>
+  function APIget() {
+
+    $.getJSON("http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=1151FF2B5E80B68F9951145B6297FD2E&steamid=76561198230401688", function(data) {
+      var test = JSON.stringify(data);
+      var array = test.split('"');
+      var index = array.indexOf("total_kills");
+      
+      var valueIndex = index + 3;
+      var totala = array[valueIndex];
+      var tkillsa = totala.replace(/\D/g,'');
+      tkillsa = tkillsa - 3007;
+
+      indexa = array.indexOf("total_deaths");
+      var valueIndexA = indexa + 3;
+      var totalb = array[valueIndexA];
+      var tdeaths = totalb.replace(/\D/g,'');
+      tdeaths = tdeaths - 9042;
+
+      var kda = tkillsa / tdeaths;
+      fKDA = kda.toPrecision(4);
+
+      var indexb = array.indexOf("total_contribution_score");
+      var valueIndexb = indexb + 3;
+      var totalc = array[valueIndexb];
+      tCont = totalc.replace(/\D/g,'');
+      tCont = tCont / 20;
+      tCont4 = tCont.toPrecision(6);
+
+      $.getJSON("http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=85A5368BECBB8B905FA1D3F9AEDD60AD&steamid=76561198152257348", function(data1) {
+      var test1 = JSON.stringify(data1);
+      var array1 = test1.split('"');
+      var index1 = array1.indexOf("total_kills");
+      
+      var valueIndex1 = index1 + 3;
+      var totala1 = array1[valueIndex1];
+      var tkillsa1 = totala1.replace(/\D/g,'');
+      tkillsa1 = tkillsa1 - 3007;
+
+      indexa1 = array1.indexOf("total_deaths");
+      var valueIndexA1 = indexa1 + 3;
+      var totalb1 = array1[valueIndex1];
+      var tdeaths1 = totalb1.replace(/\D/g,'');
+      tdeaths1 = tdeaths1 - 9302;
+
+      var kda1 = tkillsa1 / tdeaths1;
+      fKDA1 = kda1.toPrecision(4);
+
+      var indexb1 = array1.indexOf("total_contribution_score");
+      var valueIndexb1 = indexb1 + 3;
+      var totalc1 = array1[valueIndexb1];
+      tCont1 = totalc1.replace(/\D/g,'');
+      tCont1 = tCont1 / 14.33;
+      tCont2 = tCont1.toPrecision(6);
+
+
+      alert("Tendousouji_'s Stats: \t\t Abedkhan23's Stats: \n" + "Total Kills: " + tkillsa + "\t\t\t" + tkillsa1 + "\n\nTotal Deaths: " + tdeaths + "\t\t\t" + tdeaths1 + "\n\nKDA: " + fKDA + "\t\t\t\t\t" + fKDA1 + "\n\nAverage Damage: " + tCont + "\t\t" + tCont2);
+    });
+    });
+  }
+
+                  
+  
+  function timer() {
+
+  var endDate = new Date();
+  endDate = new Date(endDate.getTime() + 604800000);
+  var timer = setInterval(function() {
+    let now = new Date()
+    let t = endDate - now;
+    
+    if (t >= 0) {
+    
+        let days = Math.floor(t / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+        let secs = Math.floor((t % (1000 * 60)) / 1000);
+    
+        document.getElementById("timer-days").innerHTML = days +
+        "<span class='label'>DAY(S)</span>";
+    
+        document.getElementById("timer-hours").innerHTML = ("0"+hours).slice(-2) +
+        "<span class='label'>HR(S)</span>";
+    
+        document.getElementById("timer-mins").innerHTML = ("0"+mins).slice(-2) +
+        "<span class='label'>MIN(S)</span>";
+    
+        document.getElementById("timer-secs").innerHTML = ("0"+secs).slice(-2) +
+        "<span class='label'>SEC(S)</span>";
+    
+    } else {
+
+        document.getElementById("timer").innerHTML = "The countdown is over!";
+    
+    }
+    
+}, 1000);
+}
+</script>
+<script src="particles.min.js"></script>
+   <script>
+      particlesJS('particles-js',
+        {
+          "particles": {
+            "number": {
+              "value": 40,
+              "density": {
+                "enable": true,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#ffffff"
+            },
+            "shape": {
+              "type": "circle",
+              "stroke": {
+                "width": 0,
+                "color": "#000000"
+              },
+              "polygon": {
+                "nb_sides": 5
+              },
+              "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+              }
+            },
+            "opacity": {
+              "value": 0.3,
+              "random": false,
+              "anim": {
+                "enable": false,
+                "speed": 0.2,
+                "opacity_min": 0.1,
+                "sync": false
+              }
+            },
+            "size": {
+              "value": 3,
+              "random": true,
+              "anim": {
+                "enable": false,
+                "speed": 40,
+                "size_min": 0.1,
+                "sync": false
+              }
+            },
+            "line_linked": {
+              "enable": true,
+              "distance": 150,
+              "color": "#ffffff",
+              "opacity": 0.4,
+              "width": 1
+            },
+            "move": {
+              "enable": true,
+              "speed": 2,
+              "direction": "none",
+              "random": false,
+              "straight": false,
+              "out_mode": "out",
+              "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+              }
+            }
+          },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+              "onhover": {
+                "enable": false,
+                "mode": "repulse"
+              },
+              "onclick": {
+                "enable": false,
+                "mode": "push"
+              },
+              "resize": true
+            },
+            "modes": {
+              "grab": {
+                "distance": 400,
+                "line_linked": {
+                  "opacity": 1
+                }
+              },
+              "bubble": {
+                "distance": 400,
+                "size": 40,
+                "duration": 2,
+                "opacity": 8,
+                "speed": 3
+              },
+              "repulse": {
+                "distance": 200
+              },
+              "push": {
+                "particles_nb": 4
+              },
+              "remove": {
+                "particles_nb": 2
+              }
+            }
+          },
+          "retina_detect": true,
+          "config_demo": {
+            "hide_card": false,
+            "background_color": "#b61924",
+            "background_image": "",
+            "background_position": "50% 50%",
+            "background_repeat": "no-repeat",
+            "background_size": "cover"
+          }
+        }
+
+      );
+   </script>
+  </div>
+</body>
+</html>

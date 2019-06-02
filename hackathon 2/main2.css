@@ -1,0 +1,174 @@
+html, body, table {
+   background: #465775;
+   background-image: bground.png;
+   margin: 0;
+   font-family:'Muli', serif;
+}
+#page {
+  display: grid;
+  width: 100%;
+  height: 200px;
+  grid-template-columns:110px 1FR;
+}
+
+#leftSide {
+  background-color: ;
+  border-right: 2px #000 solid;
+  height: 100vh;
+  padding: 10px;
+}
+img {
+	margin-top:90px;
+ 	border:3px #fff solid;
+  	border-radius: 70%;
+}
+table {
+	text-align: center;
+	margin-top: 150px;
+}
+.exit-button {
+	color: #000;
+   display: block;
+   margin-top: 50px;
+   right: 100px;
+   bottom: 100px;
+   background-color: #fff;
+   border-radius: 12px;
+   padding: 20px 20px;
+   box-shadow: 0 2px 4px #0009;
+   cursor: pointer;
+   width: 50px;
+   text-align: center;
+   transition: background 0.3s;
+
+}
+.gStats {
+  color: #000;
+  margin-top: -90px;
+  margin-left: 40px;
+   right: 100px;
+   bottom: 100px;
+   background-color: #fff;
+   border-radius: 12px;
+   padding: 20px 20px;
+   box-shadow: 0 2px 4px #0009;
+   cursor: pointer;
+   width: 50px;
+   text-align: center;
+   transition: background 0.3s;
+
+}
+#particles-js{
+  width: 100%;
+  height: 100vh;
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: -1000;
+  position: absolute;
+}
+.compT {
+	text-align: center;
+	margin-top: 100px;
+}
+.player {
+	text-align:center;
+	margin-top:5px;
+}
+div {
+	font-family: 'Muli', serif;
+	color: #fff;
+}
+.container #timer {
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 10px;
+	color: #fff;
+}
+.userP {
+	font-family: 'Muli', serif;
+	margin: 0 auto;
+	margin-top:10px;
+	display: block;
+}
+.button {
+	color: #000;
+   margin: 0 auto;
+   display: block;
+   margin-top: 50px;
+   right: 100px;
+   bottom: 100px;
+   background-color: #fff;
+   border-radius: 12px;
+   padding: 20px 20px;
+   box-shadow: 0 2px 4px #0009;
+   cursor: pointer;
+   width: 100px;
+   text-align: center;
+   transition: background 0.3s;
+}
+.rbutton {
+  color: #000;
+   margin: 0 auto;
+   display: block;
+   margin-right: 50px;
+   margin-top: -55px;
+   right: 100px;
+   bottom: 100px;
+   background-color: #fff;
+   border-radius: 12px;
+   padding: 20px 20px;
+   box-shadow: 0 2px 4px #0009;
+   cursor: pointer;
+   width: 100px;
+   text-align: center;
+   transition: background 0.3s; 
+}
+.rButton {
+  color: #000;
+   margin: 0 auto;
+   display: block;
+   margin: 0 auto;
+   margin-top: 100px;
+   right: 100px;
+   bottom: 100px;
+   background-color: #fff;
+   border-radius: 12px;
+   padding: 20px 20px;
+   box-shadow: 0 2px 4px #0009;
+   cursor: pointer;
+   width: 100px;
+   text-align: center;
+   transition: background 0.3s; 
+}
+#rimage {
+  color: #fff;
+  margin-left: 80px;
+}
+.tPoints {
+  color: #fff;
+  text-align: center;
+  margin-top: 200px;
+}
+.uPoints {
+  text-decoration: none;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
